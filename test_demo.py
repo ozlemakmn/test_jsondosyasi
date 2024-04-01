@@ -31,11 +31,7 @@ class Test_Demo:
     def getData():
         return [("1","1"),("abc","123"),("deneme","secret_sauce")]
     
-    
-    # def readInvalidDataFromJSON():
-    #     with open (r'invalid/data.json','r') as file:
-    #         data= json.load(file)
-    #         return [(user,['username'],user['password']) for user in data ['invalid_login_users']]
+   
             
     def readInvalidDataFromJSON(json_file_path):
      with open(json_file_path, 'r') as file:
