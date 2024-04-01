@@ -22,7 +22,7 @@ class Test_Demo:
     def teardown_method(self):
         self.driver.quit()
 
-    @pytest.mark.skip #tüm testler koşulurken "skip" şeklinde işaretlenen testlerimi atla
+    @pytest.mark.skip #tüm testler koşulurken "skip" şeklinde işaretlenen testlerimi atl
     def test_demo(self):
         print("x")
         text = "Hello"
