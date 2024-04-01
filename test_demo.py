@@ -78,8 +78,8 @@ class Test_Demo:
         actions.perform() #depoladığım aksiyonları çalıştır
         loginButton = self.waitForElementVisible((By.ID,"login-button"))
         loginButton.click()
-        baslik =self.waitForElementVisible((By.XPATH,"//*[@id='header_container']/div[1]/div[2]/div"))
-        assert baslik.text == "Swag Labs"
+        baslik =self.waitForElementVisible((By.XPATH,baslik_xpath))
+        assert baslik.text == baslik_text
     
     def waitForElementVisible(self,locator,timeout=5):
        return WebDriverWait(self.driver,timeout).until(ec.visibility_of_element_located(locator))       
