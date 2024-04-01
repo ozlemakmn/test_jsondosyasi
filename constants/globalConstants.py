@@ -1,0 +1,6 @@
+BASE_URL = "https://www.saucedemo.com/"
+username_id = "user-name"
+password_id = "password"
+login_button_id = "login-button"
+errorMessage_xpath = "//*[@id='login_button_container']/div/form/div[3]/h3"
+errorMessage_text = "Epic sadface: Username and password do not match any user in this service"
