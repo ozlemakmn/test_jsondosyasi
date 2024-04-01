@@ -59,26 +59,26 @@ class Test_Demo:
     
     @pytest.mark.parametrize("username, password", readInvalidDataFromJSON("invalid/data.json"))
     def test_invalid_login(self,username,password):
-        userNameInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,username_id)))
-        passwordInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,password_id)))
+        userNameInput = self.waitForElementVisible((By.ID,username_id))
+        passwordInput = self.waitForElementVisible((By.ID,password_id))
         userNameInput.send_keys(username)
         passwordInput.send_keys(password)
-        loginButton = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,login_button_id)))
+        loginButton = self.waitForElementVisible((By.ID,login_button_id))
         loginButton.click()
-        errorMessage =WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.XPATH,errorMessage_xpath)))
+        errorMessage =self.waitForElementVisible((By.XPATH,errorMessage_xpath))
         assert errorMessage.text == errorMessage_text
 
 
     def test_valid_login(self):
-        userNameInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,username_id)))
-        passwordInput =WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,password_id)))
+        userNameInput = self.waitForElementVisible((By.ID,username_id))
+        passwordInput =self.waitForElementVisible((By.ID,password_id))
         actions = ActionChains(self.driver)
         actions.send_keys_to_element(userNameInput,"standard_user")
         actions.send_keys_to_element(passwordInput,"secret_sauce")
         actions.perform() #depoladığım aksiyonları çalıştır
-        loginButton = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"login-button")))
+        loginButton = self.waitForElementVisible((By.ID,"login-button"))
         loginButton.click()
-        baslik =WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.XPATH,"//*[@id='header_container']/div[1]/div[2]/div")))
+        baslik =self.waitForElementVisible((By.XPATH,"//*[@id='header_container']/div[1]/div[2]/div"))
         assert baslik.text == "Swag Labs"
     
     def waitForElementVisible(self,locator,timeout=5):

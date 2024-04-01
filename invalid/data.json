@@ -1,7 +1,7 @@
 {
     "invalid_login_users": [
       {
-        "username": "özlem",
+        "username": "ozlem",
         "password": "AKMAN"
       },
       {
@@ -9,8 +9,8 @@
         "password": "TORUN"
       },
       {
-        "username": "ayşegül",
-        "password": "AKMaN"
+        "username": "aysegul",
+        "password": "AKMAN"
       }
     ]
   }
